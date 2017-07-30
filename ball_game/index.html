@@ -100,16 +100,17 @@
   function drawBricks() {
       for(c=0; c<brickColumnCount; c++) {
           for(r=0; r<brickRowCount; r++) {
-            if(bricks[c][r].status == 1) {
-            var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
-            var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
-            bricks[c][r].x = brickX;
-            bricks[c][r].y = brickY;
-            ctx.beginPath();
-            ctx.rect(brickX, brickY, brickWidth, brickHeight);
-            ctx.fillStyle = "#0095DD";
-            ctx.fill();
-            ctx.closePath();
+              if(bricks[c][r].status == 1) {
+                  var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
+                  var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
+                  bricks[c][r].x = brickX;
+                  bricks[c][r].y = brickY;
+                  ctx.beginPath();
+                  ctx.rect(brickX, brickY, brickWidth, brickHeight);
+                  ctx.fillStyle = "#0095DD";
+                  ctx.fill();
+                  ctx.closePath();
+              }
           }
       }
   }
@@ -120,8 +121,6 @@
       drawBall();
       drawPaddle();
       collisionDetection();
-      x += dx;
-      y += dy;
 
       if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
           dx = -dx;
@@ -146,6 +145,8 @@
       else if(leftPressed && paddleX > 0) {
           paddleX -= 7;
       }
+      x += dx;
+      y += dy;
   }
   setInterval(draw, 10);
 </script>
