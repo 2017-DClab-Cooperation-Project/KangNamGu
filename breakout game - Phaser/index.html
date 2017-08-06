@@ -13,6 +13,7 @@
     });
 
     var ball;
+    var paddle;
 
     function preload() {
       game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -20,6 +21,7 @@
       game.scale.pageAlignVertically = true;
       game.stage.backgroundColor = '#eee';
       game.load.image('ball', 'img/ball.png');
+      game.load.image('paddle', 'img/paddle.png');
     }
     function create() {
       game.physics.startSystem(Phaser.Physics.ARCADE);
