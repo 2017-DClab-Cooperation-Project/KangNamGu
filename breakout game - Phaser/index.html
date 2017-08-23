@@ -140,6 +140,11 @@
     function ballHitPaddle(ball, paddle) {
         ball.animations.play('wobble');
     }
+    function startGame() {
+        startButton.destroy();
+        ball.body.velocity.set(150, -150);
+        playing = true;
+    }
 </script>
 </body>
 </html>
