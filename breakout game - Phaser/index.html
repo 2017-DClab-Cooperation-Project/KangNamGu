@@ -68,6 +68,9 @@
       lifeLostText = game.add.text(game.world.width*0.5, game.world.height*0.5, 'Life lost, click to continue', { font: '18px Arial', fill: '#0095DD' });
       lifeLostText.anchor.set(0.5);
       lifeLostText.visible = false;
+
+      startButton = game.add.button(game.world.width*0.5, game.world.height*0.5, 'button', startGame, this, 1, 0, 2);
+      startButton.anchor.set(0.5);
     }
 
     function update() {
