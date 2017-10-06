@@ -112,6 +112,7 @@
         killTween.onComplete.addOnce(function(){
           brick.kill();
         }, this);
+        console.log(1);
         killTween.start();
         score += 10;
         scoreText.setText('Points: '+score);
