@@ -5,16 +5,20 @@ var mazeHeight = 61;
 var tileSize = 10;
 var mazeGraphics;
 
+
 window.onload = function() {
 	game = new Phaser.Game(810, 610, Phaser.CANVAS, "");
      game.state.add("PlayGame",playGame);
      game.state.start("PlayGame");
+		 game.load.image('ball', 'img/ball.png');
 }
 
 var playGame = function(game){};
 
 playGame.prototype = {
      create: function(){
+
+					var ball = game.add.sprite(mazeWidth*0.5, mazeHeight*0.5, 'ball');
           mazeGraphics = game.add.graphics(0, 0);
           var moves = [];
           for(var i = 0; i < mazeHeight; i ++){
